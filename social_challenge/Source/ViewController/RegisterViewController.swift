@@ -11,15 +11,35 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let userService = UserService()
-        // Do any additional setup after loading the view.
-        Task {
-            try! await userService.getAllUsers()
+        Task{
+            print(await obtainPosts())
         }
         view.backgroundColor = .red
     }
-
-
+    
+    
+    func obtainUsers() async -> [UserModel] {
+        let userService = UserService()
+        
+        do {
+            let users = try await userService.getAllUsers()
+            return users
+        } catch {
+            print(error)
+        }
+        
+        return []
+    }
+    func obtainPosts() async -> [PostsModel] {
+        let postsService = PostsService()
+        
+        do {
+            let posts = try await postsService.getAllPosts()
+            return posts
+        } catch {
+            print(error)
+        }
+        return[]
+    }
 }
 
