@@ -11,8 +11,13 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        
+        let userService = UserService()
         // Do any additional setup after loading the view.
+        Task {
+            try! await userService.getAllUsers()
+        }
+        view.backgroundColor = .red
     }
 
 
