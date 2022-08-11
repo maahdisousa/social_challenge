@@ -41,5 +41,8 @@ class RegisterViewController: UIViewController {
         }
         return[]
     }
+    func obtainLikes() async -> [LikesModel] {
+        let 
+    }
 }
 

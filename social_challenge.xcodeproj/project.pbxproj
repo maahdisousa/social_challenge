@@ -20,6 +20,7 @@
 		0DEABB8228A3D9C3009B5554 /* social_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEABB8128A3D9C3009B5554 /* social_challengeUITestsLaunchTests.swift */; };
 		0DEABB9528A3E773009B5554 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEABB9428A3E773009B5554 /* UserService.swift */; };
 		0DEABB9728A3E853009B5554 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEABB9628A3E853009B5554 /* Constants.swift */; };
+		0DEABB9D28A51F5F009B5554 /* LikesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEABB9C28A51F5F009B5554 /* LikesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		0DEABB8128A3D9C3009B5554 /* social_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = social_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0DEABB9428A3E773009B5554 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		0DEABB9628A3E853009B5554 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0DEABB9C28A51F5F009B5554 /* LikesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				0DEABB9428A3E773009B5554 /* UserService.swift */,
 				0DEABB9628A3E853009B5554 /* Constants.swift */,
 				002B80AF28A3F47A003D15A3 /* PostsService.swift */,
+				0DEABB9C28A51F5F009B5554 /* LikesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEABB9D28A51F5F009B5554 /* LikesService.swift in Sources */,
 				0DEABB9728A3E853009B5554 /* Constants.swift in Sources */,
 				0DEABB9528A3E773009B5554 /* UserService.swift in Sources */,
 				002B80B028A3F47A003D15A3 /* PostsService.swift in Sources */,
