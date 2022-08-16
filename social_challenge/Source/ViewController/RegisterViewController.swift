@@ -39,6 +39,16 @@ class RegisterViewController: UIViewController {
         return passwordField
     }()
     
+    lazy private var loginButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Registrar", for: .normal)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 16.0
+        button.addTarget(self, action: #selector(onTapRegisterButton), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +57,7 @@ class RegisterViewController: UIViewController {
         view.addSubview(nameTextField)
         view.addSubview(emailTextField)
         view.addSubview(passwordTextFiel)
+        view.addSubview(loginButton)
         
         loadConstraints()
     }
@@ -78,13 +89,37 @@ class RegisterViewController: UIViewController {
             passwordTextFiel.widthAnchor.constraint(equalToConstant: 300),
             passwordTextFiel.heightAnchor.constraint(equalToConstant: 45)
         ]
+        
+        let loginButtonConstraints = [
+            loginButton.topAnchor.constraint(equalTo: passwordTextFiel.bottomAnchor, constant: 50),
+            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loginButton.widthAnchor.constraint(equalToConstant: 150),
+            loginButton.heightAnchor.constraint(equalToConstant: 45)
+        ]
+    
 
         NSLayoutConstraint.activate(labelConstraints)
         NSLayoutConstraint.activate(nameTextFieldConstraints)
         NSLayoutConstraint.activate(emailTextFieldConstraints)
         NSLayoutConstraint.activate(passwordTextFieldConstraints)
+        NSLayoutConstraint.activate(loginButtonConstraints)
     }
     
+    @objc func onTapRegisterButton() {
+        Task {
+            guard let name = nameTextField.text,
+                  let email = emailTextField.text,
+                  let password = passwordTextFiel.text
+            else { return }
+            
+            if name.isEmpty || email.isEmpty || password.isEmpty { return }
+            
+            await registerNewUser(userName: name, userEmail: email, userPassword: password)
+            
+            print("Usuário registrado com sucesso!")
+            
+        }
+    }
     
     func obtainUsers() async -> [UserModel] {
         let userService = UserService()
@@ -111,19 +146,20 @@ class RegisterViewController: UIViewController {
         return[]
     }
     
-    func registerNewUser() async {
+    func registerNewUser(userName: String, userEmail: String, userPassword: String) async {
         let serviceUser = UserService()
         
         do {
             try await serviceUser.registerUser(registerUserModel: RegisterUserModel (
-                    name: "Bento",
-                    email: "bento@example.com",
-                    password: "bento123"
+                    name: userName,
+                    email: userEmail,
+                    password: userPassword
                 )
             )
         } catch {
             print(error)
         }
     }
+    
 }
 
