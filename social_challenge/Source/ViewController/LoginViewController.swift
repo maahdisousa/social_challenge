@@ -37,6 +37,7 @@ class LoginViewController: UIViewController {
         button.setTitle("Login", for: .normal)
         button.backgroundColor = .black
         button.layer.cornerRadius = 16.0
+        button.addTarget(self, action: #selector(onTapLogin), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -87,6 +88,27 @@ class LoginViewController: UIViewController {
         NSLayoutConstraint.activate(passwordTextFielConstraint)
         NSLayoutConstraint.activate(loginButtonTextFieldConstraint)
         
+    }
+    
+    @objc func onTapLogin() {
+        guard let email = emailTextField.text,
+              let password = passwordTextFiel.text
+        else { return }
+        
+        if email.isEmpty || password.isEmpty {
+            return
+        }
+        
+        let userService = UserService()
+        
+        Task {
+            do {
+                let userSession = try await userService.loginUser(email: email.lowercased(), password: password)
+                print("Usuário logado com sucesso! Com o token \(userSession.token)")
+            } catch {
+                print(error)
+            }
+        }
     }
     
     

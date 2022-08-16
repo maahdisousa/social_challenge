@@ -38,4 +38,25 @@ class UserService {
     
     }
     
+    func loginUser(email: String, password: String) async throws -> SessionModel {
+        let loginString = "\(email):\(password)"
+        let loginData = loginString.data(using: String.Encoding.utf8)!
+        let base64LoginString = loginData.base64EncodedString()
+
+        guard let url = URL(string: Constants.baseUrl + "/users/login") else { fatalError("Missing URL") }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.addValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+        urlRequest.httpMethod = "POST"
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(for: urlRequest)
+            let result = try JSONDecoder().decode(SessionModel.self, from: data)
+            
+            return result
+        } catch {
+            throw error
+        }
+    }
+    
 }
