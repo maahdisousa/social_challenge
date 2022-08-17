@@ -45,6 +45,12 @@ class PostListViewController: UIViewController {
         return imagePost
     }()
     
+    let postTableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -52,8 +58,17 @@ class PostListViewController: UIViewController {
         view.addSubview(userImage)
         view.addSubview(textFieldPost)
         view.addSubview(imagePost)
+        view.addSubview(postTableView)
+        
+        postTableView.delegate = self
+        postTableView.dataSource = self
         
         loadConstraint()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        postTableView.frame = CGRect(x: 0.0, y: imagePost.frame.origin.y + 50, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.4)
     }
 
     func loadConstraint() {
@@ -82,14 +97,35 @@ class PostListViewController: UIViewController {
             imagePost.topAnchor.constraint(equalTo: textFieldPost.bottomAnchor, constant: 10),
             imagePost.widthAnchor.constraint(equalToConstant: 27),
             imagePost.heightAnchor.constraint(equalToConstant: 21)
-            
         ]
-        
+    
         NSLayoutConstraint.activate(titleLabelConstraint)
         NSLayoutConstraint.activate(userImageConstraint)
         NSLayoutConstraint.activate(textFielPostConstraint)
         NSLayoutConstraint.activate(imagePostConstraint)
     }
-    
+}
 
+
+extension PostListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UILabel()
+        header.text = "Postagens"
+        header.tintColor = .black
+        header.font = UIFont.boldSystemFont(ofSize: 24.0)
+        return header
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 25
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 25
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = "Teste"
+        return cell
+    }
 }
