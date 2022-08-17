@@ -11,6 +11,8 @@
 		002B80B028A3F47A003D15A3 /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002B80AF28A3F47A003D15A3 /* PostsService.swift */; };
 		002B80B228A3F52D003D15A3 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002B80B128A3F52D003D15A3 /* PostsModel.swift */; };
 		0045501128ABE532003F536C /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045501028ABE532003F536C /* SessionModel.swift */; };
+		00E5C5D228AD0EC1008D3B88 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C5D128AD0EC1008D3B88 /* KeychainWrapper.swift */; };
+		00E5C5D428AD1676008D3B88 /* AlertWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C5D328AD1676008D3B88 /* AlertWrapper.swift */; };
 		00E7269428A52AB900E5FFE9 /* RegisterUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E7269328A52AB900E5FFE9 /* RegisterUserModel.swift */; };
 		0D0B497F28ABC5450099126C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0B497E28ABC5450099126C /* LoginViewController.swift */; };
 		0DEABB5F28A3D9C2009B5554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEABB5E28A3D9C2009B5554 /* AppDelegate.swift */; };
@@ -48,6 +50,8 @@
 		002B80AF28A3F47A003D15A3 /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
 		002B80B128A3F52D003D15A3 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		0045501028ABE532003F536C /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
+		00E5C5D128AD0EC1008D3B88 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		00E5C5D328AD1676008D3B88 /* AlertWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWrapper.swift; sourceTree = "<group>"; };
 		00E7269328A52AB900E5FFE9 /* RegisterUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserModel.swift; sourceTree = "<group>"; };
 		0D0B497E28ABC5450099126C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0DEABB5B28A3D9C2009B5554 /* social_challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = social_challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +105,15 @@
 				0045501028ABE532003F536C /* SessionModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		00E5C5D028AD0EAE008D3B88 /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				00E5C5D128AD0EC1008D3B88 /* KeychainWrapper.swift */,
+				00E5C5D328AD1676008D3B88 /* AlertWrapper.swift */,
+			);
+			path = Wrappers;
 			sourceTree = "<group>";
 		};
 		0DEABB5228A3D9C2009B5554 = {
@@ -172,6 +185,7 @@
 		0DEABB9028A3DE31009B5554 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				00E5C5D028AD0EAE008D3B88 /* Wrappers */,
 				002B80AC28A3EFA2003D15A3 /* Model */,
 				0DEABB9328A3E747009B5554 /* Services */,
 				0DEABB9228A3DF17009B5554 /* ViewController */,
@@ -335,11 +349,13 @@
 				0DEABB9728A3E853009B5554 /* Constants.swift in Sources */,
 				0DEABB9528A3E773009B5554 /* UserService.swift in Sources */,
 				002B80B028A3F47A003D15A3 /* PostsService.swift in Sources */,
+				00E5C5D428AD1676008D3B88 /* AlertWrapper.swift in Sources */,
 				0DEABB6328A3D9C2009B5554 /* RegisterViewController.swift in Sources */,
 				0DEABB5F28A3D9C2009B5554 /* AppDelegate.swift in Sources */,
 				002B80B228A3F52D003D15A3 /* PostsModel.swift in Sources */,
 				002B80AE28A3EFB4003D15A3 /* UserModel.swift in Sources */,
 				0DEABB6128A3D9C2009B5554 /* SceneDelegate.swift in Sources */,
+				00E5C5D228AD0EC1008D3B88 /* KeychainWrapper.swift in Sources */,
 				0D0B497F28ABC5450099126C /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

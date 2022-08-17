@@ -104,12 +104,16 @@ class LoginViewController: UIViewController {
         Task {
             do {
                 let userSession = try await userService.loginUser(email: email.lowercased(), password: password)
-                print("Usuário logado com sucesso! Com o token \(userSession.token)")
+                guard let tokenData = userSession.token.data(using: .utf8) else { return }
+                try KeychainWrapper.shared.saveData(account: userSession.user.name, dataToSave: tokenData)
+                AlertWrapper.shared.showAlert(success: true ,message: "Usuário logado com sucesso!", controller: self)
             } catch {
-                print(error)
+                AlertWrapper.shared.showAlert(success: false ,message: error.localizedDescription, controller: self)
             }
         }
     }
     
+    
+   
     
 }

@@ -116,7 +116,7 @@ class RegisterViewController: UIViewController {
             
             await registerNewUser(userName: name, userEmail: email, userPassword: password)
             
-            print("Usuário registrado com sucesso!")
+            AlertWrapper.shared.showAlert(success: true, message: "Usuário \(name) registrado com sucesso", controller: self)
             
         }
     }
@@ -157,7 +157,7 @@ class RegisterViewController: UIViewController {
                 )
             )
         } catch {
-            print(error)
+            AlertWrapper.shared.showAlert(message: error.localizedDescription, controller: self)
         }
     }
     
