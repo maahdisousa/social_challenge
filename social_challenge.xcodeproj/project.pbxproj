@@ -15,6 +15,7 @@
 		00E5C5D428AD1676008D3B88 /* AlertWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C5D328AD1676008D3B88 /* AlertWrapper.swift */; };
 		00E7269428A52AB900E5FFE9 /* RegisterUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E7269328A52AB900E5FFE9 /* RegisterUserModel.swift */; };
 		0D0B497F28ABC5450099126C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0B497E28ABC5450099126C /* LoginViewController.swift */; };
+		0D0B498128AD19F90099126C /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0B498028AD19F90099126C /* PostListViewController.swift */; };
 		0DEABB5F28A3D9C2009B5554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEABB5E28A3D9C2009B5554 /* AppDelegate.swift */; };
 		0DEABB6128A3D9C2009B5554 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEABB6028A3D9C2009B5554 /* SceneDelegate.swift */; };
 		0DEABB6328A3D9C2009B5554 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEABB6228A3D9C2009B5554 /* RegisterViewController.swift */; };
@@ -54,6 +55,7 @@
 		00E5C5D328AD1676008D3B88 /* AlertWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWrapper.swift; sourceTree = "<group>"; };
 		00E7269328A52AB900E5FFE9 /* RegisterUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserModel.swift; sourceTree = "<group>"; };
 		0D0B497E28ABC5450099126C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0D0B498028AD19F90099126C /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		0DEABB5B28A3D9C2009B5554 /* social_challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = social_challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DEABB5E28A3D9C2009B5554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DEABB6028A3D9C2009B5554 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				0DEABB6228A3D9C2009B5554 /* RegisterViewController.swift */,
 				0D0B497E28ABC5450099126C /* LoginViewController.swift */,
+				0D0B498028AD19F90099126C /* PostListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DEABB9D28A51F5F009B5554 /* LikesService.swift in Sources */,
+				0D0B498128AD19F90099126C /* PostListViewController.swift in Sources */,
 				00E7269428A52AB900E5FFE9 /* RegisterUserModel.swift in Sources */,
 				0045501128ABE532003F536C /* SessionModel.swift in Sources */,
 				0DEABB9728A3E853009B5554 /* Constants.swift in Sources */,
