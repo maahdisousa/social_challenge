@@ -9,6 +9,8 @@ import UIKit
 
 class PostListViewController: UIViewController {
     
+    var posts: [PostsModel] = []
+    
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Ada Network"
@@ -64,6 +66,16 @@ class PostListViewController: UIViewController {
         postTableView.dataSource = self
         
         loadConstraint()
+        
+        Task {
+            let postService = PostsService()
+            do {
+                self.posts = try await postService.getAllPosts()
+                self.postTableView.reloadData()
+            } catch {
+                AlertWrapper.shared.showAlert(message: error.localizedDescription, controller: self)
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -121,21 +133,19 @@ extension PostListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 25
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as? PostTableViewCell else {return UITableViewCell()}
+            
+        let currentPost = posts[indexPath.row]
+        cell.configureCell(model: currentPost)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 314
+        return 360
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 25
-    }
-    
 }
 

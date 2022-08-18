@@ -134,18 +134,6 @@ class RegisterViewController: UIViewController {
         return []
     }
     
-    func obtainPosts() async -> [PostsModel] {
-        let postsService = PostsService()
-        
-        do {
-            let posts = try await postsService.getAllPosts()
-            return posts
-        } catch {
-            print(error)
-        }
-        return[]
-    }
-    
     func registerNewUser(userName: String, userEmail: String, userPassword: String) async {
         let serviceUser = UserService()
         
