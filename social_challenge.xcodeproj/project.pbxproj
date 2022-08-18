@@ -16,6 +16,7 @@
 		00E7269428A52AB900E5FFE9 /* RegisterUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E7269328A52AB900E5FFE9 /* RegisterUserModel.swift */; };
 		0D0B497F28ABC5450099126C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0B497E28ABC5450099126C /* LoginViewController.swift */; };
 		0D0B498128AD19F90099126C /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0B498028AD19F90099126C /* PostListViewController.swift */; };
+		0D0B498428AE64020099126C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0B498328AE64020099126C /* PostTableViewCell.swift */; };
 		0DEABB5F28A3D9C2009B5554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEABB5E28A3D9C2009B5554 /* AppDelegate.swift */; };
 		0DEABB6128A3D9C2009B5554 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEABB6028A3D9C2009B5554 /* SceneDelegate.swift */; };
 		0DEABB6328A3D9C2009B5554 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEABB6228A3D9C2009B5554 /* RegisterViewController.swift */; };
@@ -56,6 +57,7 @@
 		00E7269328A52AB900E5FFE9 /* RegisterUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserModel.swift; sourceTree = "<group>"; };
 		0D0B497E28ABC5450099126C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0D0B498028AD19F90099126C /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		0D0B498328AE64020099126C /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		0DEABB5B28A3D9C2009B5554 /* social_challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = social_challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DEABB5E28A3D9C2009B5554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DEABB6028A3D9C2009B5554 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 				00E5C5D328AD1676008D3B88 /* AlertWrapper.swift */,
 			);
 			path = Wrappers;
+			sourceTree = "<group>";
+		};
+		0D0B498228AE63D50099126C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0D0B498328AE64020099126C /* PostTableViewCell.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		0DEABB5228A3D9C2009B5554 = {
@@ -198,6 +208,7 @@
 		0DEABB9228A3DF17009B5554 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0D0B498228AE63D50099126C /* Components */,
 				0DEABB6228A3D9C2009B5554 /* RegisterViewController.swift */,
 				0D0B497E28ABC5450099126C /* LoginViewController.swift */,
 				0D0B498028AD19F90099126C /* PostListViewController.swift */,
@@ -357,6 +368,7 @@
 				0DEABB6328A3D9C2009B5554 /* RegisterViewController.swift in Sources */,
 				0DEABB5F28A3D9C2009B5554 /* AppDelegate.swift in Sources */,
 				002B80B228A3F52D003D15A3 /* PostsModel.swift in Sources */,
+				0D0B498428AE64020099126C /* PostTableViewCell.swift in Sources */,
 				002B80AE28A3EFB4003D15A3 /* UserModel.swift in Sources */,
 				0DEABB6128A3D9C2009B5554 /* SceneDelegate.swift in Sources */,
 				00E5C5D228AD0EC1008D3B88 /* KeychainWrapper.swift in Sources */,
